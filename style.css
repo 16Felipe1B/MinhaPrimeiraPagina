@@ -1,21 +1,31 @@
 ```css
 /* =========================================================
-   CONFIGURAÇÕES GERAIS
+   SANTOS DA IGREJA CATÓLICA
+   STYLE.CSS COMPLETO
+   ========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
    ========================================================= */
 
 :root {
     --vinho: #6b1e2e;
     --vinho-escuro: #48121e;
+
     --dourado: #c9a227;
     --dourado-claro: #e6c75a;
 
     --creme: #f8f3e8;
     --branco: #fffdf8;
+
     --texto: #3f352d;
     --texto-suave: #75685d;
 
     --borda: rgba(201, 162, 39, 0.28);
-    --sombra: 0 12px 35px rgba(68, 39, 20, 0.12);
+
+    --sombra:
+        0 12px 35px rgba(68, 39, 20, 0.12);
 
     --transicao: 0.3s ease;
 }
@@ -31,12 +41,18 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     background:
         radial-gradient(
             circle at top,
@@ -46,6 +62,7 @@ body {
         var(--creme);
 
     color: var(--texto);
+
     line-height: 1.7;
 
     min-height: 100vh;
@@ -67,7 +84,7 @@ header {
 
     padding: 80px 20px 90px;
 
-    color: #fff;
+    color: #ffffff;
 
     background:
         linear-gradient(
@@ -79,8 +96,6 @@ header {
 }
 
 
-/* brilho decorativo */
-
 header::before {
     content: "";
 
@@ -91,11 +106,13 @@ header::before {
 
     border-radius: 50%;
 
-    background: rgba(201, 162, 39, 0.08);
+    background:
+        rgba(201, 162, 39, 0.08);
 
     top: -220px;
     left: -120px;
 }
+
 
 header::after {
     content: "";
@@ -107,15 +124,21 @@ header::after {
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.04);
+    background:
+        rgba(255, 255, 255, 0.04);
 
     bottom: -220px;
     right: -100px;
 }
 
 
+/* =========================================================
+   CRUZ DO CABEÇALHO
+   ========================================================= */
+
 .simbolo-cruz {
     position: relative;
+
     z-index: 1;
 
     font-size: 58px;
@@ -127,15 +150,22 @@ header::after {
     text-shadow:
         0 3px 10px rgba(0, 0, 0, 0.25);
 
-    animation: aparecer 0.8s ease;
+    animation:
+        aparecer 0.8s ease;
 }
 
 
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
 header h1 {
     position: relative;
+
     z-index: 1;
 
-    font-size: clamp(2.1rem, 5vw, 4rem);
+    font-size:
+        clamp(2.1rem, 5vw, 4rem);
 
     line-height: 1.15;
 
@@ -149,6 +179,7 @@ header h1 {
 
 .subtitulo {
     position: relative;
+
     z-index: 1;
 
     color: var(--dourado-claro);
@@ -165,24 +196,28 @@ header h1 {
 
 header > p:not(.subtitulo) {
     position: relative;
+
     z-index: 1;
 
     max-width: 760px;
 
-    margin: 0 auto 30px;
+    margin:
+        0 auto 30px;
 
     font-size: 1.08rem;
 
-    color: rgba(255, 255, 255, 0.9);
+    color:
+        rgba(255, 255, 255, 0.9);
 }
 
 
 /* =========================================================
-   BOTÕES DO HERO
+   BOTÕES DO CABEÇALHO
    ========================================================= */
 
 .hero-actions {
     position: relative;
+
     z-index: 2;
 
     display: flex;
@@ -205,9 +240,11 @@ header > p:not(.subtitulo) {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    padding: 12px 25px;
+    padding:
+        12px 25px;
 
     border-radius: 30px;
 
@@ -221,41 +258,55 @@ header > p:not(.subtitulo) {
 }
 
 
+/* botão principal */
+
 .btn-principal {
     background: var(--dourado);
 
     color: var(--vinho-escuro);
 
     box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.2);
+        0 6px 18px
+        rgba(0, 0, 0, 0.2);
 }
 
 
 .btn-principal:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
-    background: var(--dourado-claro);
+    background:
+        var(--dourado-claro);
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.25);
+        0 10px 25px
+        rgba(0, 0, 0, 0.25);
 }
 
 
+/* botão secundário */
+
 .btn-secundario {
-    color: #fff;
+    color: #ffffff;
 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.5);
 
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 }
 
 
 .btn-secundario:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
-    background: rgba(255, 255, 255, 0.18);
+    background:
+        rgba(255, 255, 255, 0.18);
 
-    border-color: var(--dourado-claro);
+    border-color:
+        var(--dourado-claro);
 }
 
 
@@ -264,11 +315,14 @@ header > p:not(.subtitulo) {
    ========================================================= */
 
 main {
-    width: min(1180px, calc(100% - 32px));
+    width:
+        min(1180px, calc(100% - 32px));
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    padding: 50px 0 80px;
+    padding:
+        50px 0 80px;
 }
 
 
@@ -277,6 +331,8 @@ main {
    ========================================================= */
 
 .painel-busca {
+    position: relative;
+
     display: flex;
 
     align-items: center;
@@ -285,19 +341,22 @@ main {
 
     gap: 25px;
 
-    padding: 22px 25px;
+    padding:
+        22px 25px;
 
     margin-bottom: 45px;
 
-    background: var(--branco);
+    background:
+        var(--branco);
 
-    border: 1px solid var(--borda);
+    border:
+        1px solid
+        var(--borda);
 
     border-radius: 18px;
 
-    box-shadow: var(--sombra);
-
-    position: relative;
+    box-shadow:
+        var(--sombra);
 
     overflow: hidden;
 }
@@ -309,14 +368,21 @@ main {
     position: absolute;
 
     left: 0;
+
     top: 0;
+
     bottom: 0;
 
     width: 5px;
 
-    background: var(--dourado);
+    background:
+        var(--dourado);
 }
 
+
+/* =========================================================
+   TÍTULO DA PESQUISA
+   ========================================================= */
 
 .busca-titulo {
     display: flex;
@@ -333,16 +399,20 @@ main {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     width: 45px;
+
     height: 45px;
 
     border-radius: 50%;
 
-    background: rgba(201, 162, 39, 0.13);
+    background:
+        rgba(201, 162, 39, 0.13);
 
-    color: var(--dourado);
+    color:
+        var(--dourado);
 
     font-size: 24px;
 
@@ -353,7 +423,8 @@ main {
 .busca-titulo strong {
     display: block;
 
-    color: var(--vinho);
+    color:
+        var(--vinho);
 
     font-size: 1.05rem;
 }
@@ -362,20 +433,28 @@ main {
 .busca-titulo small {
     display: block;
 
-    color: var(--texto-suave);
+    color:
+        var(--texto-suave);
 
     font-size: 0.85rem;
 }
 
+
+/* =========================================================
+   CAMPO DE PESQUISA
+   ========================================================= */
 
 #buscaSanto {
     width: 100%;
 
     max-width: 480px;
 
-    padding: 14px 18px;
+    padding:
+        14px 18px;
 
-    border: 1px solid #ddd1bd;
+    border:
+        1px solid
+        #ddd1bd;
 
     border-radius: 30px;
 
@@ -385,9 +464,11 @@ main {
 
     font-size: 1rem;
 
-    color: var(--texto);
+    color:
+        var(--texto);
 
-    background: #fff;
+    background:
+        #ffffff;
 
     transition:
         border-color var(--transicao),
@@ -396,20 +477,23 @@ main {
 
 
 #buscaSanto:focus {
-    border-color: var(--dourado);
+    border-color:
+        var(--dourado);
 
     box-shadow:
-        0 0 0 4px rgba(201, 162, 39, 0.12);
+        0 0 0 4px
+        rgba(201, 162, 39, 0.12);
 }
 
 
 #buscaSanto::placeholder {
-    color: #9a8f83;
+    color:
+        #9a8f83;
 }
 
 
 /* =========================================================
-   MENSAGEM SEM RESULTADOS
+   NENHUM RESULTADO
    ========================================================= */
 
 .nenhum-resultado {
@@ -419,11 +503,15 @@ main {
 
     margin-bottom: 30px;
 
-    color: var(--vinho);
+    color:
+        var(--vinho);
 
-    background: rgba(201, 162, 39, 0.1);
+    background:
+        rgba(201, 162, 39, 0.1);
 
-    border: 1px dashed var(--dourado);
+    border:
+        1px dashed
+        var(--dourado);
 
     border-radius: 15px;
 
@@ -440,7 +528,8 @@ article {
 
     display: grid;
 
-    grid-template-columns: 300px 1fr;
+    grid-template-columns:
+        300px 1fr;
 
     gap: 35px;
 
@@ -448,13 +537,17 @@ article {
 
     padding: 25px;
 
-    background: var(--branco);
+    background:
+        var(--branco);
 
-    border: 1px solid var(--borda);
+    border:
+        1px solid
+        var(--borda);
 
     border-radius: 22px;
 
-    box-shadow: var(--sombra);
+    box-shadow:
+        var(--sombra);
 
     overflow: hidden;
 
@@ -466,10 +559,12 @@ article {
 
 
 article:hover {
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
     box-shadow:
-        0 18px 45px rgba(68, 39, 20, 0.18);
+        0 18px 45px
+        rgba(68, 39, 20, 0.18);
 }
 
 
@@ -479,7 +574,9 @@ article::before {
     position: absolute;
 
     left: 0;
+
     top: 0;
+
     bottom: 0;
 
     width: 5px;
@@ -491,6 +588,10 @@ article::before {
         );
 }
 
+
+/* =========================================================
+   IMAGENS
+   ========================================================= */
 
 article img {
     width: 100%;
@@ -504,7 +605,8 @@ article img {
     border-radius: 16px;
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.15);
+        0 8px 20px
+        rgba(0, 0, 0, 0.15);
 
     transition:
         transform 0.5s ease;
@@ -512,7 +614,8 @@ article img {
 
 
 article:hover img {
-    transform: scale(1.025);
+    transform:
+        scale(1.025);
 }
 
 
@@ -521,10 +624,16 @@ article > div {
 }
 
 
-article h2 {
-    color: var(--vinho);
+/* =========================================================
+   TÍTULO DOS CARDS
+   ========================================================= */
 
-    font-size: clamp(1.6rem, 3vw, 2.15rem);
+article h2 {
+    color:
+        var(--vinho);
+
+    font-size:
+        clamp(1.6rem, 3vw, 2.15rem);
 
     line-height: 1.25;
 
@@ -533,7 +642,8 @@ article h2 {
 
 
 .artigo-autor {
-    color: var(--dourado);
+    color:
+        var(--dourado);
 
     font-size: 0.9rem;
 
@@ -551,9 +661,11 @@ article p {
 
 
 .artigo-fonte {
-    color: var(--texto-suave);
+    color:
+        var(--texto-suave);
 
-    font-size: 0.85rem !important;
+    font-size:
+        0.85rem !important;
 
     font-style: italic;
 
@@ -561,40 +673,48 @@ article p {
 
     padding-top: 12px;
 
-    border-top: 1px solid rgba(201, 162, 39, 0.18);
+    border-top:
+        1px solid
+        rgba(201, 162, 39, 0.18);
 }
 
 
 /* =========================================================
-   SELO DO CARD
+   SELO DOS CARDS
    ========================================================= */
 
 .selo-card {
     position: absolute;
 
     top: 18px;
+
     left: 18px;
 
     z-index: 2;
 
     width: 38px;
+
     height: 38px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    background: var(--dourado);
+    background:
+        var(--dourado);
 
-    color: var(--vinho-escuro);
+    color:
+        var(--vinho-escuro);
 
     font-size: 20px;
 
     box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.2);
+        0 4px 12px
+        rgba(0, 0, 0, 0.2);
 }
 
 
@@ -603,13 +723,18 @@ article p {
    ========================================================= */
 
 article button {
-    border: 1px solid #e1d4bf;
+    border:
+        1px solid
+        #e1d4bf;
 
-    background: #fffaf0;
+    background:
+        #fffaf0;
 
-    color: var(--texto);
+    color:
+        var(--texto);
 
-    padding: 8px 14px;
+    padding:
+        8px 14px;
 
     border-radius: 20px;
 
@@ -630,13 +755,17 @@ article button {
 
 
 article button:hover {
-    background: var(--vinho);
+    background:
+        var(--vinho);
 
-    color: #fff;
+    color:
+        #ffffff;
 
-    border-color: var(--vinho);
+    border-color:
+        var(--vinho);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 
@@ -654,14 +783,16 @@ article button span {
 .card-animacao {
     opacity: 0;
 
-    transform: translateY(30px);
+    transform:
+        translateY(30px);
 }
 
 
 .card-visivel {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 
     transition:
         opacity 0.7s ease,
@@ -682,42 +813,48 @@ article button span {
 
     border-radius: 24px;
 
-    color: #fff;
-
+    /* Fundo vinho fixo no tema claro */
     background:
-        linear-gradient(
-            135deg,
-            var(--vinho-escuro),
-            var(--vinho)
-        );
+        #6b1e2e;
+
+    /* Texto branco */
+    color:
+        #ffffff;
 
     box-shadow:
-        0 15px 40px rgba(72, 18, 30, 0.2);
+        0 15px 40px
+        rgba(72, 18, 30, 0.22);
 }
 
 
 .mensagem-final h2 {
-    color: var(--dourado-claro);
+    color:
+        #e6c75a;
 
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-size:
+        clamp(1.8rem, 4vw, 2.6rem);
 
-    margin: 12px 0;
+    margin:
+        12px 0;
 }
 
 
 .mensagem-final p {
     max-width: 650px;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
-    color: rgba(255, 255, 255, 0.9);
+    color:
+        #ffffff;
 
     font-size: 1.05rem;
 }
 
 
-.ornamento {
-    color: var(--dourado-claro);
+.mensagem-final .ornamento {
+    color:
+        #e6c75a;
 
     font-size: 1.3rem;
 
@@ -726,34 +863,41 @@ article button span {
 
 
 /* =========================================================
-   BOTÃO DE TEMA ESCURO
+   BOTÃO DO MODO ESCURO
    ========================================================= */
 
 .btn-tema-escuro {
     position: fixed;
 
     right: 25px;
+
     bottom: 25px;
 
     z-index: 100;
 
     width: 52px;
+
     height: 52px;
 
-    border: 2px solid var(--dourado);
+    border:
+        2px solid
+        var(--dourado);
 
     border-radius: 50%;
 
-    background: var(--vinho);
+    background:
+        var(--vinho);
 
-    color: #fff;
+    color:
+        #ffffff;
 
     font-size: 1.3rem;
 
     cursor: pointer;
 
     box-shadow:
-        0 7px 20px rgba(0, 0, 0, 0.25);
+        0 7px 20px
+        rgba(0, 0, 0, 0.25);
 
     transition:
         transform var(--transicao),
@@ -762,9 +906,12 @@ article button span {
 
 
 .btn-tema-escuro:hover {
-    transform: rotate(15deg) scale(1.08);
+    transform:
+        rotate(15deg)
+        scale(1.08);
 
-    background: var(--vinho-escuro);
+    background:
+        var(--vinho-escuro);
 }
 
 
@@ -785,18 +932,24 @@ article button span {
 
     text-align: center;
 
-    padding: 45px 20px;
+    padding:
+        45px 20px;
 
-    color: rgba(255, 255, 255, 0.8);
+    color:
+        rgba(255, 255, 255, 0.8);
 
-    background: #321019;
+    background:
+        #321019;
 
-    border-top: 3px solid var(--dourado);
+    border-top:
+        3px solid
+        var(--dourado);
 }
 
 
 .rodape-cruz {
-    color: var(--dourado-claro);
+    color:
+        var(--dourado-claro);
 
     font-size: 30px;
 
@@ -805,7 +958,8 @@ article button span {
 
 
 .rodape strong {
-    color: #fff;
+    color:
+        #ffffff;
 
     font-size: 1.1rem;
 }
@@ -822,11 +976,15 @@ article button span {
 
 body.modo-escuro {
     --creme: #171316;
+
     --branco: #241d20;
+
     --texto: #eee5dc;
+
     --texto-suave: #b9aaa0;
 
-    --borda: rgba(201, 162, 39, 0.22);
+    --borda:
+        rgba(201, 162, 39, 0.22);
 
     background:
         radial-gradient(
@@ -836,55 +994,104 @@ body.modo-escuro {
         ),
         #171316;
 
-    color: var(--texto);
+    color:
+        var(--texto);
 }
 
+
+/* cards */
 
 body.modo-escuro article {
-    background: #241d20;
+    background:
+        #241d20;
 
     box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.35);
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
 }
 
 
+/* pesquisa */
+
 body.modo-escuro .painel-busca {
-    background: #241d20;
+    background:
+        #241d20;
 }
 
 
 body.modo-escuro #buscaSanto {
-    background: #191518;
+    background:
+        #191518;
 
-    color: #fff;
+    color:
+        #ffffff;
 
-    border-color: #4a3b40;
+    border-color:
+        #4a3b40;
 }
 
 
 body.modo-escuro #buscaSanto::placeholder {
-    color: #8f8185;
+    color:
+        #8f8185;
 }
 
 
+/* botões */
+
 body.modo-escuro article button {
-    background: #30262a;
+    background:
+        #30262a;
 
-    color: #eee5dc;
+    color:
+        #eee5dc;
 
-    border-color: #4a3b40;
+    border-color:
+        #4a3b40;
 }
 
 
 body.modo-escuro article button:hover {
-    background: var(--vinho);
+    background:
+        var(--vinho);
 
-    color: #fff;
+    color:
+        #ffffff;
 }
 
 
+/* fonte */
+
 body.modo-escuro .artigo-fonte {
-    border-color: rgba(201, 162, 39, 0.15);
+    border-color:
+        rgba(201, 162, 39, 0.15);
+}
+
+
+/* mensagem final no modo escuro */
+
+body.modo-escuro .mensagem-final {
+    background:
+        linear-gradient(
+            135deg,
+            #3b111d,
+            #6b1e2e
+        );
+
+    color:
+        #ffffff;
+}
+
+
+body.modo-escuro .mensagem-final h2 {
+    color:
+        #e6c75a;
+}
+
+
+body.modo-escuro .mensagem-final p {
+    color:
+        #ffffff;
 }
 
 
@@ -893,15 +1100,21 @@ body.modo-escuro .artigo-fonte {
    ========================================================= */
 
 @keyframes aparecer {
+
     from {
         opacity: 0;
-        transform: translateY(-15px);
+
+        transform:
+            translateY(-15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
+
 }
 
 
@@ -912,7 +1125,8 @@ body.modo-escuro .artigo-fonte {
 @media (max-width: 850px) {
 
     main {
-        width: min(100% - 24px, 700px);
+        width:
+            min(100% - 24px, 700px);
 
         padding-top: 35px;
     }
@@ -958,7 +1172,8 @@ body.modo-escuro .artigo-fonte {
 @media (max-width: 600px) {
 
     header {
-        padding: 55px 18px 65px;
+        padding:
+            55px 18px 65px;
     }
 
 
@@ -992,7 +1207,8 @@ body.modo-escuro .artigo-fonte {
 
 
     main {
-        width: min(100% - 18px, 520px);
+        width:
+            min(100% - 18px, 520px);
 
         padding-top: 25px;
     }
@@ -1035,9 +1251,11 @@ body.modo-escuro .artigo-fonte {
 
     .selo-card {
         top: 12px;
+
         left: 12px;
 
         width: 34px;
+
         height: 34px;
 
         font-size: 17px;
@@ -1045,23 +1263,37 @@ body.modo-escuro .artigo-fonte {
 
 
     .mensagem-final {
-        padding: 45px 20px;
+        padding:
+            45px 20px;
 
         margin-top: 45px;
     }
 
 
+    .mensagem-final h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .mensagem-final p {
+        font-size: 0.95rem;
+    }
+
+
     .btn-tema-escuro {
         width: 48px;
+
         height: 48px;
 
         right: 16px;
+
         bottom: 16px;
     }
 
 
     .rodape {
-        padding: 35px 18px;
+        padding:
+            35px 18px;
     }
 
 }
@@ -1074,26 +1306,37 @@ body.modo-escuro .artigo-fonte {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-    outline: 3px solid var(--dourado-claro);
 
-    outline-offset: 3px;
+    outline:
+        3px solid
+        var(--dourado-claro);
+
+    outline-offset:
+        3px;
 }
 
 
-/* Reduz animações para usuários que preferem menos movimento */
+/* =========================================================
+   REDUZIR ANIMAÇÕES
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
 
-        animation-duration: 0.01ms !important;
+        scroll-behavior:
+            auto !important;
 
-        animation-iteration-count: 1 !important;
+        animation-duration:
+            0.01ms !important;
 
-        transition-duration: 0.01ms !important;
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
     }
 
 }
