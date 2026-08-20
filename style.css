@@ -1,389 +1,1100 @@
-:root {
-    --cor-primaria: #6b4f1d;
-    --cor-secundaria: #b8860b;
-    --cor-fundo: #f8f4ea;
-    --cor-texto: #2f2a24;
-    --cor-contraste: #fffaf0;
-    --cor-botao: #ffffff;
-    --cor-card: #fffdf7;
-    --cor-borda: #d4af37;
+```css
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
 
-    --fonte-texto: 'Segoe UI', sans-serif;
+:root {
+    --vinho: #6b1e2e;
+    --vinho-escuro: #48121e;
+    --dourado: #c9a227;
+    --dourado-claro: #e6c75a;
+
+    --creme: #f8f3e8;
+    --branco: #fffdf8;
+    --texto: #3f352d;
+    --texto-suave: #75685d;
+
+    --borda: rgba(201, 162, 39, 0.28);
+    --sombra: 0 12px 35px rgba(68, 39, 20, 0.12);
+
+    --transicao: 0.3s ease;
 }
 
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    max-width: 100vw;
-    font-family: var(--fonte-texto);
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(201, 162, 39, 0.08),
+            transparent 35%
+        ),
+        var(--creme);
+
+    color: var(--texto);
+    line-height: 1.7;
+
+    min-height: 100vh;
+
+    transition:
+        background-color var(--transicao),
+        color var(--transicao);
 }
 
-/* =========================
+
+/* =========================================================
    CABEÇALHO
-   ========================= */
+   ========================================================= */
 
 header {
-    background: linear-gradient(135deg, #5a4218, #8b6914);
-    color: var(--cor-contraste);
+    position: relative;
+
     text-align: center;
-    margin: 0;
-    padding: 35px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+    padding: 80px 20px 90px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            rgba(72, 18, 30, 0.93),
+            rgba(107, 30, 46, 0.95)
+        );
+
+    overflow: hidden;
 }
+
+
+/* brilho decorativo */
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 162, 39, 0.08);
+
+    top: -220px;
+    left: -120px;
+}
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    bottom: -220px;
+    right: -100px;
+}
+
+
+.simbolo-cruz {
+    position: relative;
+    z-index: 1;
+
+    font-size: 58px;
+
+    color: var(--dourado-claro);
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.25);
+
+    animation: aparecer 0.8s ease;
+}
+
 
 header h1 {
-    margin: 0 0 12px;
-    font-size: 2.2rem;
+    position: relative;
+    z-index: 1;
+
+    font-size: clamp(2.1rem, 5vw, 4rem);
+
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
 }
 
-header p {
-    max-width: 850px;
-    margin: 0 auto;
-    font-size: 1.05rem;
-    line-height: 1.6;
+
+.subtitulo {
+    position: relative;
+    z-index: 1;
+
+    color: var(--dourado-claro);
+
+    font-size: 1.15rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
 }
 
-/* =========================
-   ÁREA PRINCIPAL
-   ========================= */
+
+header > p:not(.subtitulo) {
+    position: relative;
+    z-index: 1;
+
+    max-width: 760px;
+
+    margin: 0 auto 30px;
+
+    font-size: 1.08rem;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+   ========================================================= */
+
+.hero-actions {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+
+.hero-actions a {
+    text-decoration: none;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition:
+        transform var(--transicao),
+        background var(--transicao),
+        color var(--transicao),
+        box-shadow var(--transicao);
+}
+
+
+.btn-principal {
+    background: var(--dourado);
+
+    color: var(--vinho-escuro);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+
+    background: var(--dourado-claro);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.btn-secundario {
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.btn-secundario:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border-color: var(--dourado-claro);
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
 
 main {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
+    width: min(1180px, calc(100% - 32px));
+
     margin: 0 auto;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    padding: 50px 0 80px;
 }
 
-/* =========================
-   CARDS DOS SANTOS
-   ========================= */
 
-article {
-    width: 100%;
-    max-width: 1100px;
-    min-height: 320px;
+/* =========================================================
+   PAINEL DE PESQUISA
+   ========================================================= */
 
+.painel-busca {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
 
-    background-color: var(--cor-card);
-    border: 2px solid var(--cor-borda);
-    border-radius: 18px;
+    align-items: center;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
 
-    margin: 16px 0;
-    padding: 20px;
     gap: 25px;
 
-    text-align: left;
+    padding: 22px 25px;
+
+    margin-bottom: 45px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    box-shadow: var(--sombra);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.painel-busca::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 5px;
+
+    background: var(--dourado);
+}
+
+
+.busca-titulo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 230px;
+}
+
+
+.mini-cruz {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 162, 39, 0.13);
+
+    color: var(--dourado);
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+}
+
+
+.busca-titulo strong {
+    display: block;
+
+    color: var(--vinho);
+
+    font-size: 1.05rem;
+}
+
+
+.busca-titulo small {
+    display: block;
+
+    color: var(--texto-suave);
+
+    font-size: 0.85rem;
+}
+
+
+#buscaSanto {
+    width: 100%;
+
+    max-width: 480px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #ddd1bd;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    color: var(--texto);
+
+    background: #fff;
+
+    transition:
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+}
+
+
+#buscaSanto:focus {
+    border-color: var(--dourado);
+
+    box-shadow:
+        0 0 0 4px rgba(201, 162, 39, 0.12);
+}
+
+
+#buscaSanto::placeholder {
+    color: #9a8f83;
+}
+
+
+/* =========================================================
+   MENSAGEM SEM RESULTADOS
+   ========================================================= */
+
+.nenhum-resultado {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    color: var(--vinho);
+
+    background: rgba(201, 162, 39, 0.1);
+
+    border: 1px dashed var(--dourado);
+
+    border-radius: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CARDS DOS SANTOS
+   ========================================================= */
+
+article {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 300px 1fr;
+
+    gap: 35px;
+
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 22px;
+
+    box-shadow: var(--sombra);
 
     overflow: hidden;
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background-color 0.5s ease;
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        background var(--transicao);
 }
 
-/* Efeito quando passar o mouse */
 
 article:hover {
     transform: translateY(-5px);
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.2),
-        0 0 10px rgba(212, 175, 55, 0.3);
+        0 18px 45px rgba(68, 39, 20, 0.18);
 }
 
-/* =========================
-   IMAGENS
-   ========================= */
+
+article::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 5px;
+
+    background:
+        linear-gradient(
+            var(--dourado),
+            var(--vinho)
+        );
+}
+
 
 article img {
-    width: 280px;
-    height: 280px;
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 300px;
 
     object-fit: cover;
 
-    border-radius: 12px;
+    border-radius: 16px;
 
-    border: 3px solid var(--cor-borda);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
 
-    flex-shrink: 0;
-
-    background-color: #eee;
+    transition:
+        transform 0.5s ease;
 }
 
-/* =========================
-   CONTEÚDO DO CARD
-   ========================= */
 
-article div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+article:hover img {
+    transform: scale(1.025);
 }
+
+
+article > div {
+    min-width: 0;
+}
+
 
 article h2 {
-    color: var(--cor-primaria);
-    font-size: 1.7rem;
-    margin-top: 0;
-    margin-bottom: 8px;
+    color: var(--vinho);
+
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+
+    line-height: 1.25;
+
+    margin-bottom: 3px;
 }
 
+
+.artigo-autor {
+    color: var(--dourado);
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
 article p {
-    color: var(--cor-texto);
-    line-height: 1.65;
+    margin-bottom: 15px;
+
     font-size: 1rem;
 }
 
-/* =========================
-   AUTOR
-   ========================= */
-
-.artigo-autor {
-    font-weight: bold;
-    color: var(--cor-secundaria);
-    margin-top: 0;
-}
-
-/* =========================
-   FONTE
-   ========================= */
 
 .artigo-fonte {
-    font-size: 0.9rem;
-    margin-top: 15px;
+    color: var(--texto-suave);
+
+    font-size: 0.85rem !important;
+
+    font-style: italic;
+
+    margin-top: 20px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(201, 162, 39, 0.18);
 }
 
-.artigo-fonte a {
-    color: var(--cor-secundaria);
-    font-weight: bold;
-    text-decoration: none;
+
+/* =========================================================
+   SELO DO CARD
+   ========================================================= */
+
+.selo-card {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--dourado);
+
+    color: var(--vinho-escuro);
+
+    font-size: 20px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.artigo-fonte a:hover {
-    text-decoration: underline;
-}
 
-/* =========================
+/* =========================================================
    BOTÕES DE REAÇÃO
-   ========================= */
+   ========================================================= */
 
-button {
-    border: 1px solid #ddd;
-    background-color: var(--cor-botao);
-    color: var(--cor-texto);
+article button {
+    border: 1px solid #e1d4bf;
 
-    border-radius: 20px;
+    background: #fffaf0;
+
+    color: var(--texto);
 
     padding: 8px 14px;
 
-    font-size: 16px;
+    border-radius: 20px;
 
     cursor: pointer;
 
-    margin-right: 6px;
-    margin-top: 8px;
+    font-family: inherit;
 
-    transition: transform 0.2s ease,
-                background-color 0.3s ease;
+    font-size: 0.95rem;
+
+    margin-right: 8px;
+
+    transition:
+        background var(--transicao),
+        color var(--transicao),
+        border-color var(--transicao),
+        transform var(--transicao);
 }
 
-button:hover {
-    transform: scale(1.08);
-    background-color: #f1e5c4;
+
+article button:hover {
+    background: var(--vinho);
+
+    color: #fff;
+
+    border-color: var(--vinho);
+
+    transform: translateY(-2px);
 }
 
-/* =========================
+
+article button span {
+    font-weight: bold;
+
+    margin-left: 3px;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DOS CARDS
+   ========================================================= */
+
+.card-animacao {
+    opacity: 0;
+
+    transform: translateY(30px);
+}
+
+
+.card-visivel {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+/* =========================================================
+   MENSAGEM FINAL
+   ========================================================= */
+
+.mensagem-final {
+    text-align: center;
+
+    margin-top: 65px;
+
+    padding: 60px 25px;
+
+    border-radius: 24px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--vinho-escuro),
+            var(--vinho)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(72, 18, 30, 0.2);
+}
+
+
+.mensagem-final h2 {
+    color: var(--dourado-claro);
+
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+    margin: 12px 0;
+}
+
+
+.mensagem-final p {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 1.05rem;
+}
+
+
+.ornamento {
+    color: var(--dourado-claro);
+
+    font-size: 1.3rem;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
    BOTÃO DE TEMA ESCURO
-   ========================= */
+   ========================================================= */
 
 .btn-tema-escuro {
     position: fixed;
 
-    bottom: 20px;
-    right: 20px;
+    right: 25px;
+    bottom: 25px;
 
-    width: 60px;
-    height: 60px;
+    z-index: 100;
 
-    font-size: 28px;
+    width: 52px;
+    height: 52px;
 
-    padding: 0;
-
-    background-color: var(--cor-primaria);
-
-    color: white;
-
-    border: 3px solid var(--cor-borda);
+    border: 2px solid var(--dourado);
 
     border-radius: 50%;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: var(--vinho);
 
-    z-index: 1000;
+    color: #fff;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform var(--transicao),
+        background var(--transicao);
 }
+
 
 .btn-tema-escuro:hover {
-    transform: scale(1.1);
-    background-color: var(--cor-secundaria);
+    transform: rotate(15deg) scale(1.08);
+
+    background: var(--vinho-escuro);
 }
 
-/* =========================
-   TEMA ESCURO
-   ========================= */
 
-.tema-escuro {
-    --cor-primaria: #e5c76b;
-    --cor-secundaria: #f2d98b;
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
 
-    --cor-fundo: #12100c;
-    --cor-texto: #f5f5f5;
+.rodape {
+    display: flex;
 
-    --cor-contraste: #fff8e6;
+    flex-direction: column;
 
-    --cor-botao: #27231c;
+    align-items: center;
 
-    --cor-card: #1c1914;
-    --cor-borda: #b99735;
+    justify-content: center;
+
+    gap: 5px;
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    background: #321019;
+
+    border-top: 3px solid var(--dourado);
 }
 
-.tema-escuro body {
-    background-color: var(--cor-fundo);
+
+.rodape-cruz {
+    color: var(--dourado-claro);
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
 }
 
-.tema-escuro header {
-    background: linear-gradient(135deg, #211b10, #4b3914);
+
+.rodape strong {
+    color: #fff;
+
+    font-size: 1.1rem;
 }
 
-.tema-escuro main {
-    background-color: var(--cor-fundo);
+
+.rodape span {
+    font-size: 0.9rem;
 }
 
-.tema-escuro article {
-    background-color: var(--cor-card);
-    border-color: var(--cor-borda);
+
+/* =========================================================
+   MODO ESCURO
+   ========================================================= */
+
+body.modo-escuro {
+    --creme: #171316;
+    --branco: #241d20;
+    --texto: #eee5dc;
+    --texto-suave: #b9aaa0;
+
+    --borda: rgba(201, 162, 39, 0.22);
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(201, 162, 39, 0.06),
+            transparent 35%
+        ),
+        #171316;
+
+    color: var(--texto);
 }
 
-.tema-escuro article p {
-    color: var(--cor-texto);
+
+body.modo-escuro article {
+    background: #241d20;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35);
 }
 
-.tema-escuro h2 {
-    color: var(--cor-primaria);
+
+body.modo-escuro .painel-busca {
+    background: #241d20;
 }
 
-.tema-escuro .artigo-autor {
-    color: var(--cor-secundaria);
+
+body.modo-escuro #buscaSanto {
+    background: #191518;
+
+    color: #fff;
+
+    border-color: #4a3b40;
 }
 
-.tema-escuro .artigo-fonte {
-    color: var(--cor-texto);
+
+body.modo-escuro #buscaSanto::placeholder {
+    color: #8f8185;
 }
 
-.tema-escuro a {
-    color: var(--cor-secundaria);
+
+body.modo-escuro article button {
+    background: #30262a;
+
+    color: #eee5dc;
+
+    border-color: #4a3b40;
 }
 
-.tema-escuro button {
-    border: 1px solid #51482f;
-    background-color: var(--cor-botao);
-    color: var(--cor-texto);
+
+body.modo-escuro article button:hover {
+    background: var(--vinho);
+
+    color: #fff;
 }
 
-.tema-escuro button:hover {
-    background-color: #3a3221;
+
+body.modo-escuro .artigo-fonte {
+    border-color: rgba(201, 162, 39, 0.15);
 }
 
-.tema-escuro .btn-tema-escuro {
-    background-color: var(--cor-secundaria);
-    color: #211b10;
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* =========================
-   RESPONSIVIDADE
-   ========================= */
 
-/* Tablets */
+/* =========================================================
+   TABLETS
+   ========================================================= */
 
 @media (max-width: 850px) {
 
-    article {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    main {
+        width: min(100% - 24px, 700px);
+
+        padding-top: 35px;
     }
+
+
+    .painel-busca {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .busca-titulo {
+        min-width: 0;
+    }
+
+
+    #buscaSanto {
+        max-width: none;
+    }
+
+
+    article {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
 
     article img {
-        width: 230px;
-        height: 230px;
+        height: 350px;
+
+        min-height: 0;
     }
 
-    article div {
-        width: 100%;
-    }
-
-    article h2 {
-        font-size: 1.5rem;
-    }
 }
 
 
-/* Celulares */
+/* =========================================================
+   CELULARES
+   ========================================================= */
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
 
     header {
-        padding: 25px 15px;
+        padding: 55px 18px 65px;
     }
+
+
+    .simbolo-cruz {
+        font-size: 48px;
+    }
+
 
     header h1 {
-        font-size: 1.6rem;
+        font-size: 2.1rem;
     }
 
-    header p {
-        font-size: 0.95rem;
+
+    header > p:not(.subtitulo) {
+        font-size: 0.98rem;
     }
+
+
+    .hero-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .hero-actions a {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
 
     main {
-        padding: 15px;
+        width: min(100% - 18px, 520px);
+
+        padding-top: 25px;
     }
+
+
+    .painel-busca {
+        padding: 20px;
+
+        border-radius: 16px;
+
+        margin-bottom: 30px;
+    }
+
 
     article {
-        margin: 12px 0;
-        padding: 15px;
-        min-height: auto;
+        padding: 18px;
+
+        border-radius: 18px;
+
+        margin-bottom: 25px;
     }
+
 
     article img {
-        width: 100%;
-        height: 240px;
+        height: 280px;
+
+        border-radius: 13px;
     }
+
 
     article h2 {
-        font-size: 1.35rem;
+        font-size: 1.55rem;
     }
+
 
     article p {
-        font-size: 0.95rem;
-        text-align: left;
+        font-size: 0.96rem;
     }
 
-    .btn-tema-escuro {
-        width: 52px;
-        height: 52px;
-        font-size: 24px;
+
+    .selo-card {
+        top: 12px;
+        left: 12px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 17px;
     }
+
+
+    .mensagem-final {
+        padding: 45px 20px;
+
+        margin-top: 45px;
+    }
+
+
+    .btn-tema-escuro {
+        width: 48px;
+        height: 48px;
+
+        right: 16px;
+        bottom: 16px;
+    }
+
+
+    .rodape {
+        padding: 35px 18px;
+    }
+
 }
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--dourado-claro);
+
+    outline-offset: 3px;
+}
+
+
+/* Reduz animações para usuários que preferem menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+```
