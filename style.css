@@ -1,12 +1,6 @@
-```css
 /* =========================================================
    SANTOS DA IGREJA CATÓLICA
    STYLE.CSS COMPLETO
-   ========================================================= */
-
-
-/* =========================================================
-   VARIÁVEIS
    ========================================================= */
 
 :root {
@@ -41,11 +35,9 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family:
@@ -95,7 +87,6 @@ header {
     overflow: hidden;
 }
 
-
 header::before {
     content: "";
 
@@ -112,7 +103,6 @@ header::before {
     top: -220px;
     left: -120px;
 }
-
 
 header::after {
     content: "";
@@ -176,7 +166,6 @@ header h1 {
     letter-spacing: 0.5px;
 }
 
-
 .subtitulo {
     position: relative;
 
@@ -192,7 +181,6 @@ header h1 {
 
     margin-bottom: 25px;
 }
-
 
 header > p:not(.subtitulo) {
     position: relative;
@@ -233,7 +221,6 @@ header > p:not(.subtitulo) {
     margin-top: 25px;
 }
 
-
 .hero-actions a {
     text-decoration: none;
 
@@ -257,9 +244,6 @@ header > p:not(.subtitulo) {
         box-shadow var(--transicao);
 }
 
-
-/* botão principal */
-
 .btn-principal {
     background: var(--dourado);
 
@@ -269,7 +253,6 @@ header > p:not(.subtitulo) {
         0 6px 18px
         rgba(0, 0, 0, 0.2);
 }
-
 
 .btn-principal:hover {
     transform:
@@ -283,9 +266,6 @@ header > p:not(.subtitulo) {
         rgba(0, 0, 0, 0.25);
 }
 
-
-/* botão secundário */
-
 .btn-secundario {
     color: #ffffff;
 
@@ -296,7 +276,6 @@ header > p:not(.subtitulo) {
     background:
         rgba(255, 255, 255, 0.08);
 }
-
 
 .btn-secundario:hover {
     transform:
@@ -361,7 +340,6 @@ main {
     overflow: hidden;
 }
 
-
 .painel-busca::before {
     content: "";
 
@@ -394,7 +372,6 @@ main {
     min-width: 230px;
 }
 
-
 .mini-cruz {
     display: flex;
 
@@ -403,7 +380,6 @@ main {
     justify-content: center;
 
     width: 45px;
-
     height: 45px;
 
     border-radius: 50%;
@@ -419,7 +395,6 @@ main {
     flex-shrink: 0;
 }
 
-
 .busca-titulo strong {
     display: block;
 
@@ -428,7 +403,6 @@ main {
 
     font-size: 1.05rem;
 }
-
 
 .busca-titulo small {
     display: block;
@@ -475,7 +449,6 @@ main {
         box-shadow var(--transicao);
 }
 
-
 #buscaSanto:focus {
     border-color:
         var(--dourado);
@@ -484,7 +457,6 @@ main {
         0 0 0 4px
         rgba(201, 162, 39, 0.12);
 }
-
 
 #buscaSanto::placeholder {
     color:
@@ -557,7 +529,6 @@ article {
         background var(--transicao);
 }
 
-
 article:hover {
     transform:
         translateY(-5px);
@@ -566,7 +537,6 @@ article:hover {
         0 18px 45px
         rgba(68, 39, 20, 0.18);
 }
-
 
 article::before {
     content: "";
@@ -612,12 +582,10 @@ article img {
         transform 0.5s ease;
 }
 
-
 article:hover img {
     transform:
         scale(1.025);
 }
-
 
 article > div {
     min-width: 0;
@@ -640,7 +608,6 @@ article h2 {
     margin-bottom: 3px;
 }
 
-
 .artigo-autor {
     color:
         var(--dourado);
@@ -652,13 +619,11 @@ article h2 {
     margin-bottom: 20px;
 }
 
-
 article p {
     margin-bottom: 15px;
 
     font-size: 1rem;
 }
-
 
 .artigo-fonte {
     color:
@@ -753,7 +718,6 @@ article button {
         transform var(--transicao);
 }
 
-
 article button:hover {
     background:
         var(--vinho);
@@ -767,7 +731,6 @@ article button:hover {
     transform:
         translateY(-2px);
 }
-
 
 article button span {
     font-weight: bold;
@@ -787,7 +750,6 @@ article button span {
         translateY(30px);
 }
 
-
 .card-visivel {
     opacity: 1;
 
@@ -805,6 +767,14 @@ article button span {
    ========================================================= */
 
 .mensagem-final {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    clear: both;
+
     text-align: center;
 
     margin-top: 65px;
@@ -813,52 +783,144 @@ article button span {
 
     border-radius: 24px;
 
-    /* Fundo vinho fixo no tema claro */
-    background:
-        #6b1e2e;
+    background-color: #6b1e2e;
 
-    /* Texto branco */
-    color:
-        #ffffff;
+    color: #ffffff;
 
     box-shadow:
         0 15px 40px
         rgba(72, 18, 30, 0.22);
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+
+    overflow: hidden;
 }
 
 
+/* brilho decorativo */
+
+.mensagem-final::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201, 162, 39, 0.08);
+
+    top: -180px;
+
+    left: -100px;
+
+    pointer-events: none;
+}
+
+.mensagem-final::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    right: -100px;
+
+    bottom: -160px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ORNAMENTOS DA MENSAGEM
+   ========================================================= */
+
+.mensagem-final .ornamento {
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
+    color: #e6c75a;
+
+    font-size: 1.3rem;
+
+    line-height: 1.5;
+
+    letter-spacing: 5px;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   TÍTULO DA MENSAGEM
+   ========================================================= */
+
 .mensagem-final h2 {
-    color:
-        #e6c75a;
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
+    color: #e6c75a;
 
     font-size:
         clamp(1.8rem, 4vw, 2.6rem);
 
+    line-height: 1.25;
+
     margin:
         12px 0;
+
+    opacity: 1;
+
+    visibility: visible;
 }
 
 
+/* =========================================================
+   TEXTO DA MENSAGEM
+   ========================================================= */
+
 .mensagem-final p {
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
     max-width: 650px;
 
     margin:
         0 auto 20px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
     font-size: 1.05rem;
-}
 
+    line-height: 1.7;
 
-.mensagem-final .ornamento {
-    color:
-        #e6c75a;
+    opacity: 1;
 
-    font-size: 1.3rem;
-
-    letter-spacing: 5px;
+    visibility: visible;
 }
 
 
@@ -904,7 +966,6 @@ article button span {
         background var(--transicao);
 }
 
-
 .btn-tema-escuro:hover {
     transform:
         rotate(15deg)
@@ -946,7 +1007,6 @@ article button span {
         var(--dourado);
 }
 
-
 .rodape-cruz {
     color:
         var(--dourado-claro);
@@ -956,14 +1016,12 @@ article button span {
     margin-bottom: 5px;
 }
 
-
 .rodape strong {
     color:
         #ffffff;
 
     font-size: 1.1rem;
 }
-
 
 .rodape span {
     font-size: 0.9rem;
@@ -1018,7 +1076,6 @@ body.modo-escuro .painel-busca {
         #241d20;
 }
 
-
 body.modo-escuro #buscaSanto {
     background:
         #191518;
@@ -1029,7 +1086,6 @@ body.modo-escuro #buscaSanto {
     border-color:
         #4a3b40;
 }
-
 
 body.modo-escuro #buscaSanto::placeholder {
     color:
@@ -1050,7 +1106,6 @@ body.modo-escuro article button {
         #4a3b40;
 }
 
-
 body.modo-escuro article button:hover {
     background:
         var(--vinho);
@@ -1068,7 +1123,9 @@ body.modo-escuro .artigo-fonte {
 }
 
 
-/* mensagem final no modo escuro */
+/* =========================================================
+   MENSAGEM FINAL — MODO ESCURO
+   ========================================================= */
 
 body.modo-escuro .mensagem-final {
     background:
@@ -1080,18 +1137,27 @@ body.modo-escuro .mensagem-final {
 
     color:
         #ffffff;
-}
 
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: none;
+}
 
 body.modo-escuro .mensagem-final h2 {
     color:
         #e6c75a;
 }
 
-
 body.modo-escuro .mensagem-final p {
     color:
         #ffffff;
+}
+
+body.modo-escuro .mensagem-final .ornamento {
+    color:
+        #e6c75a;
 }
 
 
@@ -1131,30 +1197,25 @@ body.modo-escuro .mensagem-final p {
         padding-top: 35px;
     }
 
-
     .painel-busca {
         flex-direction: column;
 
         align-items: stretch;
     }
 
-
     .busca-titulo {
         min-width: 0;
     }
 
-
     #buscaSanto {
         max-width: none;
     }
-
 
     article {
         grid-template-columns: 1fr;
 
         gap: 25px;
     }
-
 
     article img {
         height: 350px;
@@ -1176,21 +1237,17 @@ body.modo-escuro .mensagem-final p {
             55px 18px 65px;
     }
 
-
     .simbolo-cruz {
         font-size: 48px;
     }
-
 
     header h1 {
         font-size: 2.1rem;
     }
 
-
     header > p:not(.subtitulo) {
         font-size: 0.98rem;
     }
-
 
     .hero-actions {
         flex-direction: column;
@@ -1198,13 +1255,11 @@ body.modo-escuro .mensagem-final p {
         width: 100%;
     }
 
-
     .hero-actions a {
         width: 100%;
 
         max-width: 300px;
     }
-
 
     main {
         width:
@@ -1212,7 +1267,6 @@ body.modo-escuro .mensagem-final p {
 
         padding-top: 25px;
     }
-
 
     .painel-busca {
         padding: 20px;
@@ -1222,7 +1276,6 @@ body.modo-escuro .mensagem-final p {
         margin-bottom: 30px;
     }
 
-
     article {
         padding: 18px;
 
@@ -1231,23 +1284,19 @@ body.modo-escuro .mensagem-final p {
         margin-bottom: 25px;
     }
 
-
     article img {
         height: 280px;
 
         border-radius: 13px;
     }
 
-
     article h2 {
         font-size: 1.55rem;
     }
 
-
     article p {
         font-size: 0.96rem;
     }
-
 
     .selo-card {
         top: 12px;
@@ -1261,24 +1310,34 @@ body.modo-escuro .mensagem-final p {
         font-size: 17px;
     }
 
-
     .mensagem-final {
         padding:
             45px 20px;
 
         margin-top: 45px;
-    }
 
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+    }
 
     .mensagem-final h2 {
         font-size: 1.8rem;
-    }
 
+        color: #e6c75a;
+    }
 
     .mensagem-final p {
         font-size: 0.95rem;
+
+        color: #ffffff;
     }
 
+    .mensagem-final .ornamento {
+        color: #e6c75a;
+    }
 
     .btn-tema-escuro {
         width: 48px;
@@ -1289,7 +1348,6 @@ body.modo-escuro .mensagem-final p {
 
         bottom: 16px;
     }
-
 
     .rodape {
         padding:
@@ -1340,4 +1398,3 @@ input:focus-visible {
     }
 
 }
-```
